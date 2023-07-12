@@ -5,3 +5,5 @@ other_images/
 sheep_annotations/
 prep.py
 _backup/
+*.txt
+/app
