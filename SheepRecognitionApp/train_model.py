@@ -1,6 +1,6 @@
 # %%
 """
-Python code snippet that uses the TensorFlow library to train a convolutional neural network (CNN) to classify sheep and non-sheep images from a directory:
+This code uses TensorFlow to train a convolutional neural network (CNN) for classifying sheep and non-sheep images. It loads and prepares the training and validation data, builds a CNN model, compiles it, trains the model, and saves it.
 """
 import os
 import tensorflow as tf

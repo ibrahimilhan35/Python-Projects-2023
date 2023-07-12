@@ -1,0 +1,53 @@
+The code you provided is a Python script that uses the tkinter library to create a simple GUI (Graphical User Interface) application for sheep recognition. Here's a breakdown of the code:
+
+Importing the required libraries:
+
+os: Provides a way to interact with the operating system.
+tkinter: Python's standard GUI library.
+filedialog (from tkinter): Allows the user to select a file using a dialog window.
+Image, ImageTk (from PIL): Classes for handling and displaying images.
+tensorflow (imported as tf): A popular deep learning framework.
+load_img, img_to_array (from tensorflow.keras.preprocessing.image): Functions for loading and preprocessing images.
+numpy (imported as np): A library for numerical computations.
+Loading the trained model:
+
+The script loads a pre-trained model named "sheep_classifier_model.h5" using TensorFlow's load_model function.
+Setting the image size:
+
+The variables img_width and img_height are set to 150, indicating the desired size for the input images.
+Defining the predict_class function:
+
+This function is called when the user clicks the "Select Image" button.
+It opens a file dialog window for the user to select an image file.
+The selected image is loaded and preprocessed using load_img and img_to_array functions.
+The preprocessed image is then passed through the loaded model to obtain predictions.
+If the predicted value is greater than or equal to 0.5, the predicted class is set as "sheep"; otherwise, it is set as "non-sheep".
+The function then calls display_image to display the selected image and updates the predicted_label with the predicted class.
+Defining the display_image function:
+
+This function takes an image path as input and displays the image in the GUI.
+It opens the image using PIL's Image.open and resizes it to fit within a maximum size of 400x400 pixels.
+The resized image is converted to a PhotoImage object using ImageTk.PhotoImage and assigned to the image_label.
+The function retains a reference to the PhotoImage object to prevent it from being garbage collected prematurely.
+Creating the main application window:
+
+The script creates a tkinter window using tk.Tk() and sets the title to "Sheep Recognition App".
+The window background color is set to "dark gray".
+Creating the "Select Image" button:
+
+A tkinter button named select_button is created with the text "Select Image" and the command set to predict_class.
+The button is packed into the window and adds a padding of 10 pixels vertically.
+Creating the image label:
+
+A tkinter label named image_label is created to display the selected image.
+The label is packed into the window.
+Creating the predicted label:
+
+A tkinter label named predicted_label is created to display the predicted class.
+The initial text is set as "Predicted class: ".
+The label is packed into the window and adds a padding of 10 pixels vertically.
+Starting the application loop:
+
+The script enters the main application loop using root.mainloop().
+This loop listens for user interactions and keeps the GUI responsive.
+When the user runs this script, a GUI window titled "Sheep Recognition App" will appear. Clicking the "Select Image" button will open a file dialog, allowing the user to choose an image file. After selecting an image, the script will display the image and predict whether it contains a sheep or not. The predicted class will be shown in the "Predicted class" label.

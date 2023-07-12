@@ -30,4 +30,4 @@ for filename in os.listdir(new_image_dir):
     print(f"Image: {filename}, Predicted class: {predicted_class}")
 
 
-#%%
+# %%

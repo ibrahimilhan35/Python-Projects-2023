@@ -13,6 +13,7 @@ model = tf.keras.models.load_model("sheep_classifier_model.h5")
 # Set the image size
 img_width, img_height = 150, 150
 
+
 # Function to predict the class of the selected image
 def predict_class():
     # Select the image from the directory
@@ -51,8 +52,10 @@ root.title("Sheep Recognition App")
 root.configure(bg="dark gray")
 
 # Create and configure the image label
-image_label = tk.Label(root, text="Click the Select Image button to unlock the world of woolly wonders!")
-#image_label.configure(bg="dark gray")
+image_label = tk.Label(
+    root, text="Click the Select Image button to unlock the world of woolly wonders!"
+)
+# image_label.configure(bg="dark gray")
 image_label.pack(pady=10)
 
 
