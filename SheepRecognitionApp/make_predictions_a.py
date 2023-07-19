@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
 
 # Load the trained model
-model = tf.keras.models.load_model("sheep_classifier_model.h5")
+model = tf.keras.models.load_model("sheep_classifier_model2.h5")
 
 # Set the path to the new image directory
 new_image_dir = "/Users/GeoPhysicist/Python-Projects-2023/SheepRecognitionApp/test"

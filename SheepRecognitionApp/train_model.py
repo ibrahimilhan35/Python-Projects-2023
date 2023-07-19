@@ -13,7 +13,8 @@ dataset_dir = "/Users/GeoPhysicist/Python-Projects-2023/SheepRecognitionApp"
 # Set the image size and batch size for training
 img_width, img_height = 150, 150
 
-batch_size = 32
+# I had used "32" for the sheep_classifier_model.h5
+batch_size = 64
 
 
 # Create an ImageDataGenerator for data augmentation and preprocessing
@@ -58,21 +59,27 @@ model = tf.keras.models.Sequential(
 
 
 # Compile the model
-model.compile(optimizer="adam", loss="binary_crossentropy", metrics=["accuracy"])
+# I had used "model.compile(optimizer="adam", loss="binary_crossentropy", metrics=["accuracy"])" for the for the sheep_classifier_model.h5
+model.compile(
+    optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
+    loss="binary_crossentropy",
+    metrics=["accuracy"],
+)
 
 
 # Train the model
+# I had used "epochs=10" for the sheep_classifier_model.h5
 model.fit(
     train_data,
     steps_per_epoch=train_data.samples // batch_size,
-    epochs=10,
+    epochs=20,
     validation_data=val_data,
     validation_steps=val_data.samples // batch_size,
 )
 
 
 # Save the trained model
-model.save("sheep_classifier_model.h5")
+model.save("sheep_classifier_model2.h5")
 
 
 # %%

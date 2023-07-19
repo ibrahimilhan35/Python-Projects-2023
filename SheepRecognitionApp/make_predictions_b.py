@@ -71,6 +71,4 @@ select_button.pack(pady=10)
 
 # Start the main application loop
 root.mainloop()
-
-
 # %%
